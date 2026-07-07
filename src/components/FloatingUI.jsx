@@ -6,8 +6,6 @@ import './FloatingUI.css';
 export default function FloatingUI() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     // Hide loader after 2.5 seconds
@@ -32,35 +30,11 @@ export default function FloatingUI() {
       }
     };
 
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('mousemove', handleMouseMove);
-
-    // Scan for clickable elements to scale cursor
-    const handleMouseOver = (e) => {
-      if (
-        e.target.tagName === 'A' || 
-        e.target.tagName === 'BUTTON' || 
-        e.target.closest('button') || 
-        e.target.closest('a') ||
-        e.target.classList.contains('clickable')
-      ) {
-        setIsHovered(true);
-      } else {
-        setIsHovered(false);
-      }
-    };
-    
-    document.addEventListener('mouseover', handleMouseOver);
 
     return () => {
       clearTimeout(timer);
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseover', handleMouseOver);
     };
   }, []);
 
@@ -74,15 +48,6 @@ export default function FloatingUI() {
       <div className="scroll-progress-container">
         <div id="scroll-progress" className="scroll-progress-bar"></div>
       </div>
-
-      {/* Screen Cursor Follower (Desktop Only) */}
-      <div 
-        className={`cursor-follower ${isHovered ? 'hovered' : ''}`}
-        style={{
-          left: `${mousePosition.x}px`,
-          top: `${mousePosition.y}px`
-        }}
-      />
 
       {/* Full-Screen Page Loader */}
       <AnimatePresence>

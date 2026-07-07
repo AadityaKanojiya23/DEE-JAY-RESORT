@@ -35,12 +35,6 @@
   gap: 3rem;
 }
 
-@media (max-width: 480px) {
-  .rooms-luxury-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .room-luxury-card {
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -388,4 +382,114 @@
 
 .modal-action-btn {
   width: 100%;
+}
+
+/* Mobile responsive 2x2 grid styling for rooms */
+@media (max-width: 768px) {
+  .rooms-filter-row {
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .rooms-filter-btn {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.7rem;
+  }
+
+  .rooms-luxury-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .room-luxury-card {
+    border-radius: var(--radius-md);
+  }
+
+  .room-card-slider {
+    height: 140px;
+  }
+  
+  .room-slider-overlay {
+    padding: 0.75rem;
+  }
+  
+  .room-card-badge {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.65rem;
+  }
+
+  .room-luxury-content {
+    padding: 1rem;
+  }
+
+  .room-card-header {
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+  }
+
+  .room-card-title {
+    font-size: 0.95rem;
+    line-height: 1.25;
+    margin-bottom: 0;
+  }
+  
+  .room-card-rating {
+    font-size: 0.75rem;
+    gap: 0.15rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+  }
+
+  .room-card-description {
+    font-size: 0.75rem;
+    line-height: 1.45;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .room-card-specs-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .room-card-specs-row div {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .room-card-specs-row span {
+    font-size: 0.65rem;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  .room-card-specs-row strong {
+    font-size: 0.725rem;
+    text-align: right;
+    line-height: 1.2;
+    font-weight: 600;
+    word-break: break-word;
+  }
+
+  .room-card-actions-row {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .room-card-actions-row button {
+    width: 100% !important;
+    padding: 0.55rem 0.75rem !important;
+    font-size: 0.6875rem !important;
+    letter-spacing: 0.05em;
+  }
 }

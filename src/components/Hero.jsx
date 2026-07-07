@@ -89,8 +89,9 @@ export default function Hero({ onSearchBooking }) {
           >
             {slides[current].desc}
           </motion.p>
+          {/* Desktop buttons - hidden on mobile via CSS */}
           <motion.div 
-            className="hero-buttons-row"
+            className="hero-buttons-row hero-buttons-desktop"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
@@ -159,6 +160,14 @@ export default function Hero({ onSearchBooking }) {
           </button>
         </form>
       </motion.div>
+
+      {/* Mobile-only CTA buttons below the booking panel */}
+      <div className="hero-buttons-mobile">
+        <a href="#rooms" className="btn btn-primary hero-mobile-cta clickable">Book Stay</a>
+        <a href="#about" className="btn btn-outline hero-sec-btn hero-mobile-cta clickable">
+          Explore Resort <Play size={10} style={{ marginLeft: 6, fill: 'currentColor' }} />
+        </a>
+      </div>
     </section>
   );
 }

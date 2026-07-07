@@ -73,24 +73,18 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Custom Styled Map Panel */}
+            {/* Worked Iframe Map Panel */}
             <div className="interactive-map-block glass-panel">
-              <div className="map-vector-canvas">
-                <div className="map-beacon-pulse"></div>
-                <div className="map-location-tag">
-                  <strong>Dee Jay Resort</strong>
-                  <span>Dhaliara Highway</span>
-                </div>
-                <div className="map-indicator-compass">N</div>
-                <a 
-                  href="https://maps.google.com/?q=Dee+Jay+Resort+Dhaliara+Himachal+Pradesh" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="btn btn-outline map-view-btn clickable"
-                >
-                  View Route on Google Maps
-                </a>
-              </div>
+              <iframe
+                title="Dee Jay Resort Location Map"
+                src="https://maps.google.com/maps?q=Dee%20Jay%20Resort,%20Dhaliara,%20Tehsil%20Dehra,%20Kangra,%20Himachal%20Pradesh%20-177103&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0, display: 'block' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
 
