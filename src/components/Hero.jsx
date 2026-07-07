@@ -5,19 +5,19 @@ import './Hero.css';
 
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=2400&q=100",
     title: "Experience Sublime Mountain Luxury",
     subtitle: "WELCOME TO DEE JAY RESORT",
     desc: "A refreshing sanctuary nestling along the idyllic snow-clad Dhauladhar mountains in Himachal Pradesh."
   },
   {
-    image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=2400&q=100",
     title: "Luxury Mountain Lodges & Villas",
     subtitle: "THE ART OF EXQUISITE LIVING",
     desc: "Indulge in suites detailed with local wood accents and private balconies, overlooking the green Kangra valley."
   },
   {
-    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2400&q=100",
     title: "Culinary Journeys & Infinity Pools",
     subtitle: "UNMATCHED PANORAMIC EXPERIENCES",
     desc: "Savor hand-selected local flavors and European recipes prepared by our master chefs under the Himalayan sky."
@@ -45,16 +45,16 @@ export default function Hero({ onSearchBooking }) {
   return (
     <section id="home" className="hero-section">
       {/* Background slide transitions */}
-      <div className="hero-slides">
-        <AnimatePresence mode="wait">
+      <div className="hero-slides" style={{ backgroundColor: '#000' }}>
+        <AnimatePresence>
           <motion.div
             key={current}
             className="hero-slide-bg"
             style={{ backgroundImage: `linear-gradient(rgba(10, 13, 11, 0.45), rgba(10, 13, 11, 0.45)), url(${slides[current].image})` }}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
           />
         </AnimatePresence>
       </div>
@@ -159,14 +159,6 @@ export default function Hero({ onSearchBooking }) {
           </button>
         </form>
       </motion.div>
-
-      {/* Floating Scroll Indicator */}
-      <a href="#about" className="hero-scroll-indicator" aria-label="Scroll Down">
-        <span className="mouse-wheel-track">
-          <span className="mouse-wheel-dot"></span>
-        </span>
-        <span className="arrow-down-head"></span>
-      </a>
     </section>
   );
 }
