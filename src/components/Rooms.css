@@ -460,10 +460,10 @@
   }
   
   .room-card-specs-row div {
-    display: grid;
-    grid-template-columns: 75px 1fr;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     gap: 0.5rem;
-    align-items: flex-start;
   }
   
   .room-card-specs-row span {
@@ -471,14 +471,16 @@
     margin-bottom: 0;
     text-transform: uppercase;
     font-weight: 500;
+    flex-shrink: 0;
   }
   
   .room-card-specs-row strong {
     font-size: 0.725rem;
     text-align: right;
-    line-height: 1.2;
+    line-height: 1.25;
     font-weight: 600;
-    word-break: break-word;
+    word-break: normal;
+    overflow-wrap: break-word;
   }
 
   .room-card-actions-row {
