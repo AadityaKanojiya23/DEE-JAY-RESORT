@@ -5,19 +5,19 @@ import './Hero.css';
 
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=2400&q=100",
     title: "Experience Sublime Mountain Luxury",
     subtitle: "WELCOME TO DEE JAY RESORT",
     desc: "A refreshing sanctuary nestling along the idyllic snow-clad Dhauladhar mountains in Himachal Pradesh."
   },
   {
-    image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=2400&q=100",
     title: "Luxury Mountain Lodges & Villas",
     subtitle: "THE ART OF EXQUISITE LIVING",
     desc: "Indulge in suites detailed with local wood accents and private balconies, overlooking the green Kangra valley."
   },
   {
-    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2400&q=100",
     title: "Culinary Journeys & Infinity Pools",
     subtitle: "UNMATCHED PANORAMIC EXPERIENCES",
     desc: "Savor hand-selected local flavors and European recipes prepared by our master chefs under the Himalayan sky."
@@ -159,14 +159,6 @@ export default function Hero({ onSearchBooking }) {
           </button>
         </form>
       </motion.div>
-
-      {/* Floating Scroll Indicator */}
-      <a href="#about" className="hero-scroll-indicator" aria-label="Scroll Down">
-        <span className="mouse-wheel-track">
-          <span className="mouse-wheel-dot"></span>
-        </span>
-        <span className="arrow-down-head"></span>
-      </a>
     </section>
   );
 }
